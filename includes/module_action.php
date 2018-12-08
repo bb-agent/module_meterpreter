@@ -44,17 +44,17 @@ if($service != "") {
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
             //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
             //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         }
 			
 		$exec = "$bin_php meterpreter.php > /dev/null &";
         //exec($exec);
 		//exec("$bin_danger \"$exec\"" );
-        exec_fruitywifi($exec);
+        exec_blackbulb($exec);
 		
     } else if($action == "stop") {
         // STOP MODULE
@@ -63,17 +63,17 @@ if($service != "") {
         //$exec = "$bin_killall $mod_name";
 		$exec = "$bin_kill " . $output[0];
         //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-        exec_fruitywifi($exec);
+        exec_blackbulb($exec);
         
         // COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
             //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
             //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         }
 
     }
@@ -84,11 +84,11 @@ if ($install == "install_$mod_name") {
 
     $exec = "chmod 755 install.sh";
     //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     $exec = "$bin_sudo ./install.sh > $log_path/install.txt &";
     //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     header('Location: ../../install.php?module='.$mod_name);
     exit;

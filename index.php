@@ -20,7 +20,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>FruityWifi</title>
+<title>BlackBulb</title>
 <script src="../js/jquery.js"></script>
 <script src="../js/jquery-ui.js"></script>
 <link rel="stylesheet" href="../css/jquery-ui.css" />
@@ -67,7 +67,7 @@ $service = $_POST["service"];
 if ($logfile != "" and $action == "delete") {
     $exec = "$bin_rm ".$mod_logs_history.$logfile.".log";
     //exec("$bin_danger \"$exec\"", $dump); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 }
 
 // SET MODE
@@ -75,7 +75,7 @@ if ($_POST["change_mode"] == "1") {
     $ss_mode = $service;
     $exec = "$bin_sed -i 's/ss_mode.*/ss_mode = \\\"".$ss_mode."\\\";/g' includes/options_config.php";
     //exec("$bin_danger \"$exec\"", $output); //DEPRECATED
-    $output = exec_fruitywifi($exec);
+    $output = exec_blackbulb($exec);
 }
 
 ?>

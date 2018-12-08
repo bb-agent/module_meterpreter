@@ -40,14 +40,14 @@ if ($type == "logs") {
 if ($type == "inject") {
 
     if ($newdata != "") { $newdata = ereg_replace(13,  "", $newdata);
-        $exec = "/bin/echo '$newdata' > /usr/share/fruitywifi/www/modules/sslstrip/includes/inject.txt";
-        //exec("/usr/share/fruitywifi/bin/danger \"" . $exec . "\"", $output); //DEPRECATED
-        $output = exec_fruitywifi($exec);
+        $exec = "/bin/echo '$newdata' > /usr/share/blackbulb/www/modules/sslstrip/includes/inject.txt";
+        //exec("/usr/share/blackbulb/bin/danger \"" . $exec . "\"", $output); //DEPRECATED
+        $output = exec_blackbulb($exec);
     }
 
-    $exec = "cat /usr/share/fruitywifi/www/modules/sslstrip/includes/inject.txt";
-    //exec("/usr/share/fruitywifi/bin/danger \"" . $exec . "\"", $dump); //DEPRECATED
-    $dump = exec_fruitywifi($exec);
+    $exec = "cat /usr/share/blackbulb/www/modules/sslstrip/includes/inject.txt";
+    //exec("/usr/share/blackbulb/bin/danger \"" . $exec . "\"", $dump); //DEPRECATED
+    $dump = exec_blackbulb($exec);
 
     echo json_encode($dump);
 

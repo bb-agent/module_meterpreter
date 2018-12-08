@@ -46,11 +46,11 @@ if ($type == "settings") {
 
     $exec = "/bin/sed -i 's/^\\\$meterpreter_host.*/\\\$meterpreter_host = \\\"".$meterpreter_host."\\\";/g' ../_info_.php";
     //exec("$bin_danger \"" . $exec . "\"", $output); //DEPRECATED
-    $output = exec_fruitywifi($exec);
+    $output = exec_blackbulb($exec);
 
     $exec = "/bin/sed -i 's/^\\\$meterpreter_port.*/\\\$meterpreter_port = \\\"".$meterpreter_port."\\\";/g' ../_info_.php";
     //exec("$bin_danger \"" . $exec . "\"", $output); //DEPRECATED
-	exec_fruitywifi($exec);
+	exec_blackbulb($exec);
     
     header('Location: ../index.php?tab=0');
     exit;
